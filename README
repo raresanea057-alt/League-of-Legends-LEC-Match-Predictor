@@ -1,1 +1,16 @@
+# LEC Match Predictor
 
+A machine learning project focused on predicting the outcomes of LEC (League of Legends EMEA Championship) matches.
+
+## Current Status
+
+The project is currently in the data collection phase. I am gathering match data and using this opportunity to learn and practice web scraping, data preprocessing, and feature engineering techniques.
+
+## Goals
+
+- Collect and organize LEC match data
+- Build a dataset for training
+- Train and evaluate prediction models
+- Explore esports analytics and machine learning
+
+🚧 Work in progress.
