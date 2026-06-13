@@ -4,8 +4,9 @@ A machine learning project focused on predicting the outcomes of LEC (League of 
 
 ## Current Status
 
-The project is currently in the data collection phase. I am gathering match data and using this opportunity to learn and practice web scraping, data preprocessing, and feature engineering techniques.
+<OLD> The project is currently in the data collection phase. I am gathering match data and using this opportunity to learn and practice web scraping, data preprocessing, and feature engineering techniques.
 
+<CURRENT> Used data from Oracle's Elixir and Leaguepedia to create a baseline dataset, I need to feature engineer a lot more but I'm currently happy with the progress
 ## Goals
 
 - Collect and organize LEC match data
