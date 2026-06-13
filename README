@@ -1,29 +1,56 @@
-# LEC Match Predictor
+# 🎮 LEC Match Predictor
 
-> Predict the winner of professional League of Legends LEC matches using machine learning, using only **pre-game** data to avoid data leakage.
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![ML](https://img.shields.io/badge/Machine-Learning-red)](https://scikit-learn.org/)
 
-## 🧠 Project Goal
+> Predict the winner of professional **League of Legends LEC matches** using only pre‑game data – no cheating, no in‑game stats.
 
-Most esports prediction models accidentally use in-game stats (gold diff, kill diff) that aren't known before a match starts. This project builds a **fair predictor** that only uses information available before the first minion spawns:
+---
 
-- Team recent win rates (last 5 games)
-- Head-to-head historical record
-- Draft composition features (planned for v2)
-- Tournament stage / playoff pressure
+## 🧠 Why this project exists
 
-## 🏆 Current Performance
+Most esports prediction models accidentally use **in‑game stats** (gold diff, kill diff) that aren't known before a match starts.  
+This model is different – it only uses **information available before minions spawn**, making predictions fair and realistic.
 
-| Model              | Accuracy | Precision | Recall | F1   |
-|-------------------|----------|-----------|--------|------|
-| Logistic Regression | 0.62     | 0.61      | 0.62   | 0.61 |
-| Random Forest       | 0.67     | 0.66      | 0.67   | 0.66 |
-| **CatBoost**        | **0.71** | **0.70**  | **0.71** | **0.70** |
+---
 
-*Baseline (always pick Fnatic): 0.53*
+## 🏆 Leaderboard
 
-## 🚀 How to Run
+| Model                    | Accuracy | Precision | Recall | F1 Score |
+|--------------------------|----------|-----------|--------|----------|
+| 🚀 **CatBoost** (best)    | **0.71** | **0.70**  | **0.71**| **0.70** |
+| 🌲 Random Forest          | 0.67     | 0.66      | 0.67   | 0.66     |
+| 📈 Logistic Regression    | 0.62     | 0.61      | 0.62   | 0.61     |
+| 🪙 *Baseline (always pick Fnatic)* | 0.53 | — | — | — |
 
-### 1. Clone the repo
+> *CatBoost outperforms baseline by +34% relative improvement.*
+
+---
+
+## 📦 Features used (pre‑game only)
+
+| Feature | Description |
+|---------|-------------|
+| `team_winrate_last5` | Win rate over last 5 matches |
+| `opponent_winrate_last5` | Opponent's recent form |
+| `head_to_head_winrate` | Historical record between teams |
+| `days_since_last_match` | Rest advantage |
+| `playoff_indicator` | 1 if playoffs, else 0 |
+
+✅ **No in‑game stats** – model cannot "cheat".
+
+---
+
+## 🚀 Quick start
+
 ```bash
+# Clone the repo
 git clone https://github.com/raresanea057-alt/League-of-Legends-LEC-Match-Predictor.git
 cd League-of-Legends-LEC-Match-Predictor
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the notebook
+jupyter notebook LEC_Match_Predictor.ipynb
