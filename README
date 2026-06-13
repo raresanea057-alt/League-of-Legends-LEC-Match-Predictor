@@ -4,14 +4,16 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![ML](https://img.shields.io/badge/Machine-Learning-red)](https://scikit-learn.org/)
 
-> Predict the winner of professional **League of Legends LEC matches** using only pre‑game data – no cheating, no in‑game stats.
+<blockquote>
+Predict the winner of professional <strong>League of Legends LEC matches</strong> using only pre‑game data – no cheating, no in‑game stats.
+</blockquote>
 
 ---
 
 ## 🧠 Why this project exists
 
-Most esports prediction models accidentally use **in‑game stats** (gold diff, kill diff) that aren't known before a match starts.  
-This model is different – it only uses **information available before minions spawn**, making predictions fair and realistic.
+Most esports prediction models accidentally use <strong>in‑game stats</strong> (gold diff, kill diff) that aren't known before a match starts.  
+This model is different – it only uses <strong>information available before minions spawn</strong>, making predictions fair and realistic.
 
 ---
 
@@ -19,12 +21,14 @@ This model is different – it only uses **information available before minions 
 
 | Model                    | Accuracy | Precision | Recall | F1 Score |
 |--------------------------|----------|-----------|--------|----------|
-| 🚀 **CatBoost** (best)    | **0.71** | **0.70**  | **0.71**| **0.70** |
+| 🚀 <strong>CatBoost (best)</strong> | <strong>0.71</strong> | <strong>0.70</strong> | <strong>0.71</strong> | <strong>0.70</strong> |
 | 🌲 Random Forest          | 0.67     | 0.66      | 0.67   | 0.66     |
 | 📈 Logistic Regression    | 0.62     | 0.61      | 0.62   | 0.61     |
-| 🪙 *Baseline (always pick Fnatic)* | 0.53 | — | — | — |
+| 🪙 <em>Baseline (always pick Fnatic)</em> | 0.53 | — | — | — |
 
-> *CatBoost outperforms baseline by +34% relative improvement.*
+<blockquote>
+CatBoost outperforms baseline by <strong>+34% relative improvement</strong>.
+</blockquote>
 
 ---
 
@@ -32,13 +36,13 @@ This model is different – it only uses **information available before minions 
 
 | Feature | Description |
 |---------|-------------|
-| `team_winrate_last5` | Win rate over last 5 matches |
-| `opponent_winrate_last5` | Opponent's recent form |
-| `head_to_head_winrate` | Historical record between teams |
-| `days_since_last_match` | Rest advantage |
-| `playoff_indicator` | 1 if playoffs, else 0 |
+| <code>team_winrate_last5</code> | Win rate over last 5 matches |
+| <code>opponent_winrate_last5</code> | Opponent's recent form |
+| <code>head_to_head_winrate</code> | Historical record between teams |
+| <code>days_since_last_match</code> | Rest advantage |
+| <code>playoff_indicator</code> | 1 if playoffs, else 0 |
 
-✅ **No in‑game stats** – model cannot "cheat".
+✅ <strong>No in‑game stats</strong> – model cannot "cheat".
 
 ---
 
