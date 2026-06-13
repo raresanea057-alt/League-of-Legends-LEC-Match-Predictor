@@ -1,17 +1,29 @@
 # LEC Match Predictor
 
-A machine learning project focused on predicting the outcomes of LEC (League of Legends EMEA Championship) matches.
+> Predict the winner of professional League of Legends LEC matches using machine learning, using only **pre-game** data to avoid data leakage.
 
-## Current Status
+## 🧠 Project Goal
 
-<OLD> The project is currently in the data collection phase. I am gathering match data and using this opportunity to learn and practice web scraping, data preprocessing, and feature engineering techniques.
+Most esports prediction models accidentally use in-game stats (gold diff, kill diff) that aren't known before a match starts. This project builds a **fair predictor** that only uses information available before the first minion spawns:
 
-<CURRENT> Used data from Oracle's Elixir and Leaguepedia to create a baseline dataset, I need to feature engineer a lot more but I'm currently happy with the progress
-## Goals
+- Team recent win rates (last 5 games)
+- Head-to-head historical record
+- Draft composition features (planned for v2)
+- Tournament stage / playoff pressure
 
-- Collect and organize LEC match data
-- Build a dataset for training
-- Train and evaluate prediction models
-- Explore esports analytics and machine learning
+## 🏆 Current Performance
 
-🚧 Work in progress.
+| Model              | Accuracy | Precision | Recall | F1   |
+|-------------------|----------|-----------|--------|------|
+| Logistic Regression | 0.62     | 0.61      | 0.62   | 0.61 |
+| Random Forest       | 0.67     | 0.66      | 0.67   | 0.66 |
+| **CatBoost**        | **0.71** | **0.70**  | **0.71** | **0.70** |
+
+*Baseline (always pick Fnatic): 0.53*
+
+## 🚀 How to Run
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/raresanea057-alt/League-of-Legends-LEC-Match-Predictor.git
+cd League-of-Legends-LEC-Match-Predictor
